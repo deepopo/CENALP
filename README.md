@@ -1,6 +1,7 @@
 # CENALP
 This repository contains the code of paper:  
- >CENALP: Du, Xingbo & Yan, Junchi & Zha, Hongyuan. (2019). Joint Link Prediction and Network Alignment via Cross-graph Embedding. 2251-2257. 10.24963/ijcai.2019/312. 
+ >CENALP: Du, Xingbo & Yan, Junchi & Zha, Hongyuan. (2019). Joint Link Prediction and Network Alignment via Cross-graph Embedding. 2251-2257. 10.24963/ijcai.2019/312.   
+ 
 Before executing *CENALP*, you should install the following packages:  
 ``pip install sklearn``  
 ``pip install networkx``  
