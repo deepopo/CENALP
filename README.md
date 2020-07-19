@@ -23,5 +23,6 @@ You can check out the other options:
 We use precision and recall to evaluate both link prediction and network alignment in this repository.
 
 ## Reference  
+If you are interested in our researches, please cite our papers:  
 [1] Du, Xingbo & Yan, Junchi & Zha, Hongyuan. (2019). Joint Link Prediction and Network Alignment via Cross-graph Embedding. 2251-2257. 10.24963/ijcai.2019/312.   
 [2] Du, Xingbo & Yan, Junchi & Zhang, Rui & Zha, Hongyuan. (2020). Cross-network Skip-gram Embedding for Joint Network Alignment and Link Prediction. IEEE Transactions on Knowledge and Data Engineering. PP. 1-1. 10.1109/TKDE.2020.2997861. 
