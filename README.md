@@ -12,9 +12,9 @@ The detailed version are ``python==3.7.2`` and ``networkx==2.4``, ``sklearn==0.2
 We provide a toy dataset, which is named 'bigtoy'. If you want to evaluate other datasets, please ensure that ground truth alignments and the edges for two networks are necessary.   
 
 ### Example  
-In order to run *CENLAP*, you can execute *demo.py* directly or execute the following command in ./src/:  
+In order to run *CENALP*, you can execute *demo.py* directly or execute the following command in ./src/:  
 ``python demo.py``  
-To modify the parameters, you can run:  
+To modify some of the parameters, you can run the code like this:  
 ``python demo.py --filename bigtoy --align_train_prop 0.0 --q 0.5``  
 You can check out the other options:  
 ``python demo.py --help``  
