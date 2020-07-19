@@ -15,9 +15,9 @@ We provide a toy dataset, which is named 'bigtoy'. If you want to evaluate other
 In order to run *CENLAP*, you can execute *demo.py* directly or execute the following command in ./src/:  
 ``python demo.py``  
 To modify the parameters, you can run:  
-``python main.py --filename bigtoy --align_train_prop 0.0 --q 0.5``  
+``python demo.py --filename bigtoy --align_train_prop 0.0 --q 0.5``  
 You can check out the other options:  
-``python main.py --help``  
+``python demo.py --help``  
 
 ### Evaluate
 We use precision and recall to evaluate both link prediction and network alignment in this repository.
