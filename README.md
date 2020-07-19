@@ -6,7 +6,7 @@ Before executing *CENALP*, you should install the following packages:
 ``pip install networkx``  
 ``pip install gensim``  
 ``pip install tqdm``  
-The detailed version are ``python==3.7.2`` and ``networkx==2.4``, ``sklearn==0.22.1``, ``gensim==3.4.0``, but they are not mandatory unless the code doesn't work.  
+The detailed version are ``python==3.7.2`` and ``networkx==2.4``, ``sklearn==0.22.1``, ``gensim==3.4.0``, ``tqdm==4.31.1``, but they are not mandatory unless the code doesn't work.  
 ## Basic usage  
 ### Data  
 We provide a toy dataset, which is named 'bigtoy'. If you want to evaluate other datasets, please ensure that ground truth alignments and the edges for two networks are necessary.   
@@ -23,5 +23,5 @@ You can check out the other options:
 We use precision and recall to evaluate both link prediction and network alignment in this repository.
 
 ## Reference  
-[1] Du, Xingbo & Yan, Junchi & Zha, Hongyuan. (2019). Joint Link Prediction and Network Alignment via Cross-graph Embedding. 2251-2257. 10.24963/ijcai.2019/312. 
+[1] Du, Xingbo & Yan, Junchi & Zha, Hongyuan. (2019). Joint Link Prediction and Network Alignment via Cross-graph Embedding. 2251-2257. 10.24963/ijcai.2019/312.   
 [2] Du, Xingbo & Yan, Junchi & Zhang, Rui & Zha, Hongyuan. (2020). Cross-network Skip-gram Embedding for Joint Network Alignment and Link Prediction. IEEE Transactions on Knowledge and Data Engineering. PP. 1-1. 10.1109/TKDE.2020.2997861. 
