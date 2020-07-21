@@ -10,7 +10,7 @@ Before executing *CENALP*, you should install the following packages:
 The detailed version are ``python==3.7.2`` and ``networkx==2.4``, ``sklearn==0.22.1``, ``gensim==3.4.0``, ``tqdm==4.31.1``, but they are not mandatory unless the code doesn't work.  
 ## Basic usage  
 ### Data  
-We provide a toy dataset, which is named 'bigtoy'. If you want to evaluate other datasets, please ensure that ground truth alignments and the edges for two networks are necessary.   
+We provide a toy dataset, which is named 'bigtoy'. If you want to evaluate other datasets, please ensure that ground truth alignments and the edges for two networks are necessary. In addition, you can find the datasets used in the paper in http://thinklab.sjtu.edu.cn/paper/IJCAI19_network_dataset.zip.  
 
 ### Example  
 In order to run *CENALP*, you can execute *demo.py* directly or execute the following command in ./src/:  
