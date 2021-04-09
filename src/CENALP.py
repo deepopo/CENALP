@@ -42,8 +42,9 @@ def CENALP(G1, G2, q, attr1, attr2, attribute, alignment_dict, alignment_dict_re
     k = seed_link(seed_list1, seed_list2, G1, G2, anchor = anchor)
     print()
     k = np.inf
-    test_edges_final1 = np.array(list(set(G1.edges()) - set([(alignment_dict_reversed[edge[0]], alignment_dict_reversed[edge[1]]) for edge in G2.edges()])))
-    test_edges_final2 = np.array(list(set(G2.edges()) - set([(alignment_dict[edge[0]], alignment_dict[edge[1]]) for edge in G1.edges()])))
+    test_edges_final1 = np.array(list(set(G1.edges()) - set([(alignment_dict_reversed.get(edge[0], 0), alignment_dict_reversed.get(edge[1], 0)) for edge in G2.edges()])))
+    test_edges_final2 = np.array(list(set(G2.edges()) - set([(alignment_dict.get(edge[0], 0), alignment_dict.get(edge[1], 0)) for edge in G1.edges()])))
+
     pred_list1, pred_list2 = [], []
 
     while True:
