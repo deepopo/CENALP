@@ -9,8 +9,8 @@ def structing(layers, G1, G2, G1_degree_dict, G2_degree_dict, attribute, alpha, 
     pp_dist_matrix = {}
     pp_dist_df = pd.DataFrame(np.zeros((G1.number_of_nodes(), G2.number_of_nodes())), 
                                        index=G1_nodes, columns=G2_nodes)
-    
-    for layer in range(layers + 1):
+    rr = int(layers) + 1
+    for layer in range(rr):
 
         L1 = [np.log(k1 * np.max(G1_degree_dict[layer][x]) + np.e) for x in G1_nodes]
         L2 = [np.log(k2 * np.max(G2_degree_dict[layer][x]) + np.e) for x in G2_nodes]
@@ -19,7 +19,8 @@ def structing(layers, G1, G2, G1_degree_dict, G2_degree_dict, attribute, alpha, 
         pp_dist_matrix[layer, 1] = pd.DataFrame(np.array(list(L2 * G1.number_of_nodes())).reshape(-1, G2.number_of_nodes()), 
                           index=G1_nodes, columns=G2_nodes)
         pp_dist_df += abs(pp_dist_matrix[layer, 0] - pp_dist_matrix[layer, 1])
-    for layer in range(layers + 1):
+    rr = int(layers) + 1
+    for layer in range(rr):
 
         L1 = [np.log(k1 * np.min(G1_degree_dict[layer][x]) + 1) for x in G1_nodes]
         L2 = [np.log(k2 * np.min(G2_degree_dict[layer][x]) + 1) for x in G2_nodes]
@@ -29,9 +30,9 @@ def structing(layers, G1, G2, G1_degree_dict, G2_degree_dict, attribute, alpha, 
                           index=G1_nodes, columns=G2_nodes)
         pp_dist_df += abs(pp_dist_matrix[layer, 0] - pp_dist_matrix[layer, 1])
     pp_dist_df /= 2
-    pp_dist_df = np.exp(-alpha * pp_dist_df)
+    pp_dist_df = np.exp(-int(alpha) * pp_dist_df)
     if len(attribute) != 0:
-        pp_dist_df = c * pp_dist_df + np.array(attribute) * (1-c)
+        pp_dist_df = float(c) * pp_dist_df + np.array(attribute) * (1-float(c))
     struc_neighbor1 = {}
     struc_neighbor2 = {}
     struc_neighbor_sim1 = {}

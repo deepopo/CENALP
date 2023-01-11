@@ -139,7 +139,7 @@ def single_simulate_walks(G1, G2, q, struc_neighbor1, struc_neighbor2,
 
             for j in range(walk_length - 1):
                 r = np.random.random()
-                if r < q:
+                if float(r) < float(q):
                     if curr_graph == 1:
                         list_Gneighbors = list(G1.neighbors(node))
                         node = np.random.choice(list_Gneighbors)
@@ -169,7 +169,7 @@ def single_simulate_walks(G1, G2, q, struc_neighbor1, struc_neighbor2,
 
             for j in range(walk_length - 1):
                 r = np.random.random()
-                if r < q:
+                if float(r) < float(q):
                     if curr_graph == 1:
                         list_Gneighbors = list(G1.neighbors(node))
                         node = np.random.choice(list_Gneighbors)
