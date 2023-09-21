@@ -42,8 +42,8 @@ def CENALP(G1, G2, q, attr1, attr2, attribute, alignment_dict, alignment_dict_re
     k = seed_link(seed_list1, seed_list2, G1, G2, anchor = anchor)
     print()
     k = np.inf
-    test_edges_final1 = np.array(list(set(G1.edges()) - set([(alignment_dict_reversed.get(edge[0], 0), alignment_dict_reversed.get(edge[1], 0)) for edge in G2.edges()])))
-    test_edges_final2 = np.array(list(set(G2.edges()) - set([(alignment_dict.get(edge[0], 0), alignment_dict.get(edge[1], 0)) for edge in G1.edges()])))
+    test_edges_final1 = np.array(list(set(G1.edges()) - set([(alignment_dict_reversed.get(edge[0], -1), alignment_dict_reversed.get(edge[1], -1)) for edge in G2.edges()])))
+    test_edges_final2 = np.array(list(set(G2.edges()) - set([(alignment_dict.get(edge[0], -1), alignment_dict.get(edge[1], -1)) for edge in G1.edges()])))
 
     pred_list1, pred_list2 = [], []
 
@@ -81,7 +81,10 @@ def CENALP(G1, G2, q, attr1, attr2, attribute, alignment_dict, alignment_dict_re
         walks = LineSentence('random_walks.txt')
         print('finished!')
         print('embedding...', end='')
-        model = Word2Vec(walks, size=64, window=5, min_count=0, hs=1, sg=1, workers=32, iter=5)
+        # in the old version, it's:
+        # model = Word2Vec(walks, size=64, window=5, min_count=0, hs=1, sg=1, workers=32, iter=5)
+        # in the new version, it's:
+        model = Word2Vec(walks, vector_size=64, window=5, min_count=0, hs=1, sg=1, negative=10, workers=32, epochs=5)
         print('finished!')
         if len(columns) == 0 or len(index) == 0:
             break
@@ -149,8 +152,8 @@ def CENALP(G1, G2, q, attr1, attr2, attribute, alignment_dict, alignment_dict_re
         G1.add_edges_from(pred1)
         G2.add_edges_from(pred2)
         
-        pred_list1 += list([[alignment_dict[edge[0]], alignment_dict[edge[1]]] for edge in pred1])
-        pred_list2 += list([[alignment_dict_reversed[edge[0]], alignment_dict_reversed[edge[1]]] for edge in pred2])
+        pred_list1 += list([[alignment_dict.get(edge[0], -1), alignment_dict.get(edge[1], -1)] for edge in pred1])
+        pred_list2 += list([[alignment_dict_reversed.get(edge[0], -1), alignment_dict_reversed.get(edge[1], -1)] for edge in pred2])
         print('Add seed links: {}'.format(len(pred1) + len(pred2)))
         
         count -= seed_list_num
